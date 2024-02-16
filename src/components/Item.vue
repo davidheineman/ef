@@ -1,7 +1,8 @@
 <template>
     <div class="card" @click="showModal = true">
         <div class="card-content">
-            <p class="card-text">{{ cardText }}</p>
+            <!-- <p class="card-text">{{ cardText }}</p> -->
+            <p class="card-text" v-html="formattedText"></p>
         </div>
         <div class="card-footer">
             <i class="fa-brands fa-twitter"></i>
@@ -27,7 +28,6 @@ export default {
     name: 'CardWithLogo',
     props: {
         cardText: {
-            type: String,
             required: true
         },
         logo: {
@@ -43,12 +43,18 @@ export default {
         return {
             showModal: false // Initially modal is hidden
         };
+    },
+    computed: {
+        formattedText() {
+
+            let rawHTML = this.cardText.map(([word, label]) => `<span class="${label}">${word}</span>`).join(' ');
+            return rawHTML;
+        }
     }
 };
 </script>
   
 <style scoped>
-
 .card-text {
     padding: 16px
 }
@@ -58,7 +64,7 @@ export default {
     border-radius: 5px;
     /* padding: 20px; */
     margin: 0 20px 0 20px;
-    margin-top: 0 !important; 
+    margin-top: 0 !important;
     width: 400px !important;
 }
 
@@ -75,6 +81,5 @@ export default {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-}
-</style>
+}</style>
   
