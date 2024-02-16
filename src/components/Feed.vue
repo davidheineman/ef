@@ -5,12 +5,12 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
-    Feed
-    <span class="badge badge-danger badge-pill ml-2">URGENT</span>
-    <span class="badge badge-primary badge-pill ml-2">PRODUCT</span>
-    <span class="badge badge-info badge-pill ml-2">CUSTOMER</span>
-</div>
-
+                            Feed
+                            <span class="custom-badge badge-pill custom-badge-urg">Urgent</span>
+                            <span class="custom-badge badge-pill custom-badge-prod">Product</span>
+                            <span class="custom-badge badge-pill custom-badge-serv">Poor Service</span>
+                            <span class="custom-badge badge-pill custom-badge-frust">Brand Frustration</span>
+                        </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="card-body">
@@ -143,11 +143,46 @@ export default {
 </script>
   
 <style scoped>
-.inprogress {
-    background-color:   rgb(255, 254, 168) !important
+.custom-badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    margin-left: 8px; 
 }
+
+.custom-badge-urg {
+    color: #000;
+    background-color: #fdbacd;
+}
+
+.custom-badge-prod {
+    color: #000;
+    background-color: #fdd5ba;
+}
+
+.custom-badge-serv {
+    color: #000;
+    background-color: #eadf63;
+}
+
+.custom-badge-frust {
+    color: #000;
+    background-color: #ddbafd;
+}
+
+
+.inprogress {
+    background-color: rgb(255, 254, 168) !important
+}
+
 .resolved {
-    background-color:rgb(149, 255, 145) !important
+    background-color: rgb(149, 255, 145) !important
 }
 
 .scrollable-feed {
