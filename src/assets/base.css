@@ -1,4 +1,4 @@
-.card-text .DT {
+.card-text .URG, .card-text .PROD, .card-text .SERV, .card-text .FRUST {
     color: inherit;
     text-decoration: inherit;
     font-weight: 600;
@@ -9,12 +9,12 @@
     color: inherit;
 }
 
-.DT { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdbacd; }
-.NN { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdd5ba; }
-.VB { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdfcba; }
+.URG { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdbacd; }
+.PROD { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdd5ba; }
+.SERV { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #fdfcba; }
 .label-green { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #bafdc3; }
+.FRUST { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #ddbafd; }
 .label-blue { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #bae6fd; }
-.label-purple { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #ddbafd; }
 .label-black { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #a5a5a5; }
 .label-twitter { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #aed9f1; }
 .label-linkedin { box-shadow: inset 0 -0.05em 0 0 #fff, inset 0 -0.35em 0 0 #acdaf3; }

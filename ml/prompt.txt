@@ -1,0 +1,16 @@
+We want to identify spans of negative text about a brand. We want to find the spans within that text which may include problems we can eventually solve.
+
+Convert this sentence to a series of tokens in the format of [WORD, LABEL], where each word corresponds to these labels:
+
+Urgent problem: 'URG'
+Product issue: 'PROD'
+Poor service: 'SERV'
+Brand frustration: 'FRUST'
+No problem: 'O'
+
+Make sure to highlight groups of labels. Here is an example:
+Input: "Wells Fargo: Making bad decisions since forever. #WorstBankEver"
+Output: [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Making", "FRUST"], ["bad", "FRUST"], ["decisions", "FRUST"], ["since", "O"], ["forever", "O"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]]
+
+Now perform the task on your own!
+Input: 
