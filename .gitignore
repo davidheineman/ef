@@ -28,10 +28,7 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-<<<<<<< HEAD
 env.json
 .twitter_env
-=======
 
 .openai-secret
->>>>>>> 3550062 (prompting)
