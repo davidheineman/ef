@@ -15,11 +15,18 @@
         <div v-if="showModal" class="modal">
             <div class="modal-content">
                 <h2>Choose How to Resolve</h2>
-                <p>Client Complaint</p>
+                <hr>
+                <h3>Client Complaint</h3>
                 <p class="card-text" v-html="formattedText"></p>
-                <p>Suggested Response</p>
-                <p>{{ response }}</p>
-                <button class="send">Send</button>
+                <h3>Suggested Responses</h3>
+                <div class="response">
+                    <p>{{ response1 }}</p>
+                    <button class="send">Send</button>
+                </div>
+                <div class="response">
+                    <p>{{ response2 }}</p>
+                    <button class="send">Send</button>
+                </div>
             </div>
             </div>
         </div>
@@ -56,7 +63,8 @@ export default {
     data() {
         return {
             showModal: false,
-            resposnse: ''
+            response1: 'Generating response 1...',
+            response2: 'Generating response 2...'
         };
     },
     computed: {
@@ -69,7 +77,8 @@ export default {
         toggleModal() {
             this.showModal = !this.showModal;
             this.getResponse().then(response => {
-                this.response = response;
+                this.response1 = response[0].message.content;
+                this.response2 = response[1].message.content;
             });
         },
         async getResponse() {
@@ -80,10 +89,11 @@ export default {
                 const completion = await openai.chat.completions.create({
                     messages: [{ role: "system", content: prompt }],
                     model: "gpt-3.5-turbo",
+                    n: 2,
                 });
 
                 console.log(completion)
-                return completion.choices[0].message.content;
+                return completion.choices;
             } catch (error) {
                 console.error('Error in generating solution:', error);
                 return 'Sorry, there was an error processing the review.';
@@ -144,7 +154,7 @@ export default {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 30%;
+  width: 50%;
 }
 
 .close {
@@ -159,6 +169,17 @@ export default {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.response {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.send {
+    width: 80px;
+    height: 30px;
 }
 </style>
   
