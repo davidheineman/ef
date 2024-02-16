@@ -1,10 +1,10 @@
 <template>
     <div class="card">
         <div class="card-content">
-            <p>{{ cardText }}</p>
+            <p class="card-text">{{ cardText }}</p>
         </div>
         <div class="card-footer">
-            <img :src="logoSrc" alt="Logo" class="logo">
+            <i class="fa-brands fa-twitter"></i>
             <p>{{ name }}</p>
         </div>
     </div>
@@ -18,7 +18,7 @@ export default {
             type: String,
             required: true
         },
-        logoSrc: {
+        logo: {
             type: String,
             required: true
         },
@@ -31,21 +31,25 @@ export default {
 </script>
   
 <style scoped>
+.card-text {
+    padding: 16px
+}
+
 .card {
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
+    /* padding: 20px; */
     margin: 20px;
     width: 300px;
 }
 
 .card-content {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 .card-footer {
     display: flex;
-    align-items: center;
+    align-items:end;
 }
 
 .logo {

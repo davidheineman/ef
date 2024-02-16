@@ -2,7 +2,7 @@
     <div class="feed">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2">
+                <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
                             Feed
@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <div class="scrollable-feed">
                                 <div v-for="(item, index) in items" :key="index" class="feed-item">
-                                    {{ item }}
+                                    <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
                                 </div>
                             </div>
                         </div>
@@ -19,8 +19,6 @@
             </div>
         </div>
     </div>
-
-    <Item cardText="This is the text in the card." logoSrc="/path/to/logo.png" name="Company Name" />
 </template>
   
 <script>
@@ -34,10 +32,26 @@ export default {
     data() {
         return {
             items: [
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                // Add more items as needed
+                "Wells Fargo: Making bad decisions since forever. #WorstBankEver",
+                "Thanks, Wells Fargo, for charging me fees just for existing. #NotCool",
+                "Wells Fargo customer service: Where dreams go to die. #CustomerServiceFail",
+                "Guess who messed up my account again? Yep, you guessed it, Wells Fargo. #NeverAgain",
+                "Wells Fargo: where incompetence meets greed. #WorstBankEver",
+                "Trying to reach Wells Fargo support is like shouting into the void. #NoHelp",
+                "Wells Fargo's idea of 'convenience' is robbing you blind. #Ripoff",
+                "Hey Wells Fargo, ever heard of 'ethical banking'? Didn't think so. #Shameful",
+                "Wells Fargo: You'll never find a more wretched hive of scum and villainy. #Avoid",
+                "Wells Fargo: Where fees multiply like rabbits. #MoneyPit",
+                "If you're looking for disappointment, look no further than Wells Fargo. #Fail",
+                "Wells Fargo's motto: 'Let's make banking as frustrating as possible.' #MissionAccomplished",
+                "I'd rather wrestle a bear than deal with Wells Fargo again. #BankingNightmare",
+                "Wells Fargo: Where customer satisfaction goes to die. #NoThanks",
+                "Wells Fargo: The epitome of corporate greed. #MoneyHungry",
+                "I'd rather trust a toddler with my finances than Wells Fargo. #NoFaith",
+                "Shoutout to Wells Fargo for consistently ruining my day. #ThanksForNothing",
+                "Wells Fargo: Where your money disappears without a trace. #Sketchy",
+                "Wells Fargo's idea of 'security' is a joke. #Unsafe",
+                "You know what's scarier than a horror movie? Wells Fargo's fees. #NightmareBank",
             ]
         };
     }
@@ -46,8 +60,7 @@ export default {
   
 <style scoped>
 .scrollable-feed {
-    max-height: 400px;
-    /* Adjust height as needed */
+    max-height: 800px;
     overflow-y: auto;
 }
 
