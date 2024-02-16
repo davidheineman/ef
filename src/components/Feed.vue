@@ -94,7 +94,25 @@ export default {
 
             resolvedItems: [
                 [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Making", "FRUST"], ["bad", "FRUST"], ["decisions", "FRUST"], ["since", "O"], ["forever", "O"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]],
-                [["Thanks", "O"], [",", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [",", "O"], ["for", "O"], ["charging", "O"], ["me", "O"], ["fees", "PROD"], ["just", "O"], ["for", "O"], ["existing", "O"], [".", "O"], ["#", "O"], ["NotCool", "FRUST"]]
+                [["Thanks", "O"], [",", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [",", "O"], ["for", "O"], ["charging", "SERV"], ["me", "O"], ["fees", "PROD"], ["just", "O"], ["for", "O"], ["existing", "O"], [".", "O"], ["#", "SERV"], ["NotCool", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["customer", "O"], ["service", "SERV"], [":", "O"], ["Where", "SERV"], ["dreams", "O"], ["go", "O"], ["to", "O"], ["die", "URG"], [".", "O"], ["#", "SERV"], ["CustomerServiceFail", "SERV"]],
+                [["Guess", "O"], ["who", "O"], ["messed", "FRUST"], ["up", "PROD"], ["my", "PROD"], ["account", "PROD"], ["again", "O"], ["?", "O"], ["Yep", "O"], [",", "O"], ["you", "O"], ["guessed", "O"], ["it", "O"], [",", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [".", "O"], ["#", "SERV"], ["NeverAgain", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["where", "O"], ["incompetence", "SERV"], ["meets", "SERV"], ["greed", "PROD"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]],
+                [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "O"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["\'", "O"], ["s", "O"], ["idea", "O"], ["of", "O"], ["\'", "O"], ["convenience", "O"], ["\'", "O"], ["is", "O"], ["robbing", "URG"], ["you", "URG"], ["blind", "URG"], [".", "O"], ["#", "SERV"], ["Ripoff", "SERV"]],
+                [["Hey", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [",", "O"], ["ever", "O"], ["heard", "O"], ["of", "O"], ["\'", "O"], ["ethical", "PROD"], ["banking", "PROD"], ["\'", "O"], ["?", "O"], ["Did", "O"], ["n\'t", "O"], ["think", "O"], ["so", "O"], [".", "O"], ["#", "FRUST"], ["Shameful", "FRUST"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["You\'ll", "O"], ["never", "O"], ["find", "O"], ["a", "O"], ["more", "O"], ["wretched", "FRUST"], ["hive", "FRUST"], ["of", "O"], ["scum", "FRUST"], ["and", "O"], ["villainy", "FRUST"], [".", "O"], ["#", "PROD"], ["Avoid", "PROD"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Where", "O"], ["fees", "PROD"], ["multiply", "PROD"], ["like", "O"], ["rabbits", "O"], [".", "O"], ["#", "SERV"], ["MoneyPit", "SERV"]],
+                [["If", "O"], ["you\'re", "O"], ["looking", "O"], ["for", "O"], ["disappointment", "FRUST"], [",", "O"], ["look", "O"], ["no", "O"], ["further", "O"], ["than", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [".", "O"], ["#", "SERV"], ["Fail", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["\'", "O"], ["s", "O"], ["motto", "O"], [":", "O"], ["\'", "O"], ["Let\'s", "O"], ["make", "FRUST"], ["banking", "SERV"], ["as", "O"], ["frustrating", "FRUST"], ["as", "O"], ["possible", "O"], ["\'", "O"], [".", "O"], ["#", "SERV"], ["MissionAccomplished", "SERV"]],
+                [["I\'d", "O"], ["rather", "O"], ["wrestle", "O"], ["a", "O"], ["bear", "O"], ["than", "O"], ["deal", "O"], ["with", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["again", "O"], [".", "O"], ["#", "SERV"], ["BankingNightmare", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Where", "O"], ["customer", "O"], ["satisfaction", "SERV"], ["goes", "SERV"], ["to", "SERV"], ["die", "SERV"], [".", "O"], ["#", "O"], ["NoThanks", "O"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["The", "O"], ["epitome", "O"], ["of", "O"], ["corporate", "O"], ["greed", "FRUST"], [".", "O"], ["#", "SERV"], ["MoneyHungry", "SERV"]],
+                [["I\'d", "O"], ["rather", "O"], ["trust", "O"], ["a", "O"], ["toddler", "O"], ["with", "O"], ["my", "O"], ["finances", "O"], ["than", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [".", "O"], ["#", "O"], ["NoFaith", "O"]],
+                [["Shoutout", "O"], ["to", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["for", "O"], ["consistently", "O"], ["ruining", "FRUST"], ["my", "O"], ["day", "O"], [".", "O"], ["#", "SERV"], ["ThanksForNothing", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Where", "O"], ["your", "O"], ["money", "O"], ["disappears", "URG"], ["without", "O"], ["a", "O"], ["trace", "O"], [".", "O"], ["#", "SERV"], ["Sketchy", "SERV"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["\'s", "O"], ["idea", "O"], ["of", "O"], ["\'", "O"], ["security", "URG"], ["\'", "O"], ["is", "O"], ["a", "O"], ["joke", "FRUST"], [".", "O"], ["#", "PROD"], ["Unsafe", "PROD"]],
+                [["You", "O"], ["know", "O"], ["what\'s", "O"], ["scarier", "O"], ["than", "O"], ["a", "O"], ["horror", "O"], ["movie", "O"], ["?", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["\'s", "O"], ["fees", "SERV"], [".", "O"], ["#", "SERV"], ["NightmareBank", "SERV"]]
             ],
 
             // items: [
@@ -153,7 +171,7 @@ export default {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
-    margin-left: 8px; 
+    margin-left: 8px;
 }
 
 .custom-badge-urg {
