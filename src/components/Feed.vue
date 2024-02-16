@@ -65,13 +65,14 @@ export default {
 }
 
 .feed-item {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    padding: 10px 10px 10px 10px;
+    /* border-bottom: 1px solid #ccc; */
 }
 
 /* Optional styling for better appearance */
 .card {
     margin-top: 20px;
+    width: 500px
 }
 
 .card-header {
@@ -81,7 +82,7 @@ export default {
 }
 
 .card-body {
-    padding: 0;
+    padding: 16px 0 16px 0;
 }
 </style>
   

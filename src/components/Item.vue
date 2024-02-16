@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" @click="showModal = true">
         <div class="card-content">
             <p class="card-text">{{ cardText }}</p>
         </div>
@@ -7,10 +7,22 @@
             <i class="fa-brands fa-twitter"></i>
             <p>{{ name }}</p>
         </div>
+
+        <div class="modal-overlay" v-if="showModal">
+            <div class="modal">
+                <span class="close" @click="showModal = false">&times;</span>
+                <div class="modal-content">
+                    <h2>Modal Title</h2>
+                    <p>This is the content of the modal.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
   
 <script>
+// import Modal from './Modal.vue';
+
 export default {
     name: 'CardWithLogo',
     props: {
@@ -26,11 +38,17 @@ export default {
             type: String,
             required: true
         }
+    },
+    data() {
+        return {
+            showModal: false // Initially modal is hidden
+        };
     }
 };
 </script>
   
 <style scoped>
+
 .card-text {
     padding: 16px
 }
@@ -39,8 +57,9 @@ export default {
     border: 1px solid #ccc;
     border-radius: 5px;
     /* padding: 20px; */
-    margin: 20px;
-    width: 300px;
+    margin: 0 20px 0 20px;
+    margin-top: 0 !important; 
+    width: 400px !important;
 }
 
 .card-content {
@@ -49,7 +68,7 @@ export default {
 
 .card-footer {
     display: flex;
-    align-items:end;
+    align-items: end;
 }
 
 .logo {
