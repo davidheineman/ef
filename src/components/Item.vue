@@ -6,7 +6,10 @@
         </div>
         <div class="card-footer">
             <i class="fa-brands fa-twitter"></i>
-            <p>{{ name }}</p>
+            <p style="margin-bottom: 0">
+                <p style="text-align: right; margin-bottom: 0;">{{ name }}</p>
+                <p style="text-align: right; margin-bottom: 0;">@username</p>
+            </p>
         </div>
 
         <div class="modal-overlay" v-if="showModal">
@@ -65,7 +68,7 @@ export default {
     /* padding: 20px; */
     margin: 0 20px 0 20px;
     margin-top: 0 !important;
-    width: 400px !important;
+    width: 90% !important;
 }
 
 .card-content {
@@ -75,6 +78,11 @@ export default {
 .card-footer {
     display: flex;
     align-items: end;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.card-footer p {
+    margin-bottom: 8px;
 }
 
 .logo {

@@ -1,18 +1,62 @@
 <template>
     <div class="feed">
-        <div class="container">
+        <div class="container" style="max-width: 90%">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
-                            Feed
+    Feed
+    <span class="badge badge-danger badge-pill ml-2">URGENT</span>
+    <span class="badge badge-primary badge-pill ml-2">PRODUCT</span>
+    <span class="badge badge-info badge-pill ml-2">CUSTOMER</span>
+</div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <div class="scrollable-feed">
+                                        <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
+                                            <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <div class="scrollable-feed">
+                                        <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
+                                            <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-header inprogress">
+                            In Progress
                         </div>
                         <div class="card-body">
-                            <!-- <Item :cardText="devtext" logo="fa-brands fa-twitter" name="Twitter" /> -->
-
-
                             <div class="scrollable-feed">
-                                <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
+                                <div v-for="(item, index) in progressItems" :key="index" class="feed-item">
+                                    <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-header resolved">
+                            Resolved
+                        </div>
+                        <div class="card-body">
+                            <div class="scrollable-feed">
+                                <div v-for="(item, index) in resolvedItems" :key="index" class="feed-item">
                                     <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
                                 </div>
                             </div>
@@ -41,6 +85,16 @@ export default {
                 [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["where", "FRUST"], ["incompetence", "FRUST"], ["meets", "O"], ["greed", "FRUST"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]],
                 [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "FRUST"]],
                 [["Wells", "BRAND"], ["Fargo", "BRAND"], ["'s", "O"], ["idea", "O"], ["of", "O"], ["'", "O"], ["convenience", "PROD"], ["'", "O"], ["is", "O"], ["robbing", "FRUST"], ["you", "O"], ["blind", "O"], [".", "O"], ["#", "O"], ["Ripoff", "FRUST"]]
+            ],
+
+            progressItems: [
+                [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "FRUST"]],
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["'s", "O"], ["idea", "O"], ["of", "O"], ["'", "O"], ["convenience", "PROD"], ["'", "O"], ["is", "O"], ["robbing", "FRUST"], ["you", "O"], ["blind", "O"], [".", "O"], ["#", "O"], ["Ripoff", "FRUST"]]
+            ],
+
+            resolvedItems: [
+                [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["Making", "FRUST"], ["bad", "FRUST"], ["decisions", "FRUST"], ["since", "O"], ["forever", "O"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]],
+                [["Thanks", "O"], [",", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [",", "O"], ["for", "O"], ["charging", "O"], ["me", "O"], ["fees", "PROD"], ["just", "O"], ["for", "O"], ["existing", "O"], [".", "O"], ["#", "O"], ["NotCool", "FRUST"]]
             ],
 
             // items: [
@@ -89,6 +143,13 @@ export default {
 </script>
   
 <style scoped>
+.inprogress {
+    background-color:   rgb(255, 254, 168) !important
+}
+.resolved {
+    background-color:rgb(149, 255, 145) !important
+}
+
 .scrollable-feed {
     max-height: 800px;
     overflow-y: auto;
@@ -102,7 +163,7 @@ export default {
 /* Optional styling for better appearance */
 .card {
     margin-top: 20px;
-    width: 500px
+    width: 100%
 }
 
 .card-header {
