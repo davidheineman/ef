@@ -58,6 +58,9 @@
                             <div class="scrollable-feed">
                                 <div v-for="(item, index) in resolvedItems" :key="index" class="feed-item">
                                     <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                    <div>
+                                        Suggested Response: {{ generatedResponse }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -70,6 +73,16 @@
   
 <script>
 import Item from './Item.vue';
+import OpenAI from "openai";
+import data from '../../env.json';
+
+
+const apiKey = data.VUE_APP_OPENAI_API_KEY;
+
+const openai = new OpenAI({
+    apiKey: apiKey,
+    dangerouslyAllowBrowser: true
+});
 
 export default {
     components: {
@@ -120,13 +133,34 @@ export default {
             //     "You know what's scarier than a horror movie? Wells Fargo's fees. #NightmareBank",
             // ],
             currentItemIndex: 1,
-            displayItems: []
+            displayItems: [],
+            generatedResponse: ''
         };
     },
     created() {
         this.startFeed();
+        // this.getResponse().then(response => {
+        //     this.generatedResponse = response;
+        // });
     },
     methods: {
+        async getResponse() {
+            try {
+                const prompt = `Here is a negative customer review: "You know what's scarier than a horror movie? Wells Fargo's fees. #NightmareBank". 
+                Write a polite and empathetic response that offers a solution to the customer's problem. BE CONCISE, do not exceed 250 characters Make sure you address the user's specific concerns if any are mentioned.`;
+
+                const completion = await openai.chat.completions.create({
+                    messages: [{ role: "system", content: prompt }],
+                    model: "gpt-3.5-turbo",
+                });
+
+                console.log(completion)
+                return completion.choices[0].message.content;
+            } catch (error) {
+                console.error('Error in generating solution:', error);
+                return 'Sorry, there was an error processing the review.';
+            }
+        },
         startFeed() {
             setInterval(() => {
                 if (this.currentItemIndex < this.items.length) {
