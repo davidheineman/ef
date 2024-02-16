@@ -9,7 +9,7 @@
                         </div>
                         <div class="card-body">
                             <div class="scrollable-feed">
-                                <div v-for="(item, index) in items" :key="index" class="feed-item">
+                                <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
                                     <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
                                 </div>
                             </div>
@@ -52,8 +52,26 @@ export default {
                 "Wells Fargo: Where your money disappears without a trace. #Sketchy",
                 "Wells Fargo's idea of 'security' is a joke. #Unsafe",
                 "You know what's scarier than a horror movie? Wells Fargo's fees. #NightmareBank",
-            ]
+            ],
+            currentItemIndex: 0,
+            displayItems: []
         };
+    },
+    created() {
+        this.startFeed();
+    },
+    methods: {
+        startFeed() {
+            setInterval(() => {
+                if (this.currentItemIndex < this.items.length) {
+                    // Add the new item to the beginning of the displayItems array
+                    this.displayItems.unshift(this.items[this.currentItemIndex]);
+                    this.currentItemIndex++;
+                } else {
+                    clearInterval(this.interval);
+                }
+            }, 2000);
+        }
     }
 };
 </script>
