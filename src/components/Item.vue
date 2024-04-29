@@ -29,11 +29,13 @@
                 <h3>Suggested Responses</h3>
                 <div class="response">
                     <p>{{ response1 }}</p>
-                    <button type="button" class="btn btn-primary">Send</button>
+                    <button type="button" class="btn btn-primary" @click="moveItem(idx)">Send</button>
+                    <button type="button" class="btn btn-warning" @click="moveItem(idx)">Later</button>
                 </div>
                 <div class="response">
                     <p>{{ response2 }}</p>
-                    <button type="button" class="btn btn-primary">Send</button>
+                    <button type="button" class="btn btn-primary" @click="moveItem(idx)">Send</button>
+                    <button type="button" class="btn btn-warning" @click="moveItem(idx)">Later</button>
                 </div>
 
                 <!-- <div class="row">
@@ -75,7 +77,9 @@ export default {
         name: {
             type: String,
             required: true
-        }
+        },
+        idx: {},
+        moveItem: Function
     },
     data() {
         return {
@@ -115,12 +119,16 @@ export default {
                 console.error('Error in generating solution:', error);
                 return 'Sorry, there was an error processing the review.';
             }
-        },
+        }
     }
 };
 </script>
   
 <style scoped>
+.btn {
+    margin-right: 8px;
+}
+
 .response {
     padding: 0 16px 0 0;
 }

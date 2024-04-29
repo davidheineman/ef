@@ -16,7 +16,7 @@
                                 <div class="card-body">
                                     <div class="scrollable-feed">
                                         <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
-                                            <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                            <Item :cardText="item" logo="fa-brands fa-twitter" :idx="index" :moveItem="moveItem" name="Twitter" />
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@
                                 <div class="card-body">
                                     <div class="scrollable-feed">
                                         <div v-for="(item, index) in displayItems" :key="index" class="feed-item">
-                                            <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                            <Item :cardText="item" logo="fa-brands fa-twitter" :idx="index" :moveItem="moveItem" name="Twitter" />
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                         <div class="card-body">
                             <div class="scrollable-feed">
                                 <div v-for="(item, index) in progressItems" :key="index" class="feed-item">
-                                    <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                    <Item :cardText="item" logo="fa-brands fa-twitter" :idx="index" :moveItem="moveItem" name="Twitter" />
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                         <div class="card-body">
                             <div class="scrollable-feed">
                                 <div v-for="(item, index) in resolvedItems" :key="index" class="feed-item">
-                                    <Item :cardText="item" logo="fa-brands fa-twitter" name="Twitter" />
+                                    <Item :cardText="item" logo="fa-brands fa-twitter" :idx="index" :moveItem="moveItem" name="Twitter" />
                                 </div>
                             </div>
                         </div>
@@ -84,11 +84,11 @@ export default {
                 [["Guess", "O"], ["who", "O"], ["messed", "O"], ["up", "O"], ["my", "O"], ["account", "O"], ["again", "O"], ["?", "O"], ["Yep", "O"], [",", "O"], ["you", "O"], ["guessed", "O"], ["it", "O"], [",", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], [".", "O"], ["#", "O"], ["NeverAgain", "FRUST"]],
                 [["Wells", "BRAND"], ["Fargo", "BRAND"], [":", "O"], ["where", "FRUST"], ["incompetence", "FRUST"], ["meets", "O"], ["greed", "FRUST"], [".", "O"], ["#", "SERV"], ["WorstBankEver", "SERV"]],
                 [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "FRUST"]],
-                [["Wells", "BRAND"], ["Fargo", "BRAND"], ["'s", "O"], ["idea", "O"], ["of", "O"], ["'", "O"], ["convenience", "PROD"], ["'", "O"], ["is", "O"], ["robbing", "FRUST"], ["you", "O"], ["blind", "O"], [".", "O"], ["#", "O"], ["Ripoff", "FRUST"]]
+                // [["Wells", "BRAND"], ["Fargo", "BRAND"], ["'s", "O"], ["idea", "O"], ["of", "O"], ["'", "O"], ["convenience", "PROD"], ["'", "O"], ["is", "O"], ["robbing", "FRUST"], ["you", "O"], ["blind", "O"], [".", "O"], ["#", "O"], ["Ripoff", "FRUST"]]
             ],
 
             progressItems: [
-                [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "FRUST"]],
+                // [["Trying", "O"], ["to", "O"], ["reach", "O"], ["Wells", "BRAND"], ["Fargo", "BRAND"], ["support", "SERV"], ["is", "O"], ["like", "O"], ["shouting", "O"], ["into", "O"], ["the", "O"], ["void", "O"], [".", "O"], ["#", "O"], ["NoHelp", "FRUST"]],
                 [["Wells", "BRAND"], ["Fargo", "BRAND"], ["'s", "O"], ["idea", "O"], ["of", "O"], ["'", "O"], ["convenience", "PROD"], ["'", "O"], ["is", "O"], ["robbing", "FRUST"], ["you", "O"], ["blind", "O"], [".", "O"], ["#", "O"], ["Ripoff", "FRUST"]]
             ],
 
@@ -155,8 +155,21 @@ export default {
                     clearInterval(this.interval);
                 }
             }, 2000);
+        },
+
+        moveItem(idx) {
+            // console.log(this.items)
+            // // const itembegin = this.items;
+            // const item = this.items.splice(idx, 1)[0]; // Splice returns an array, so we get the first element
+        
+            // console.log(item)
+
+            // // Append the removed item to progressItems
+            // this.progressItems.push(item);
+            
+            // this.items = item
         }
-    }
+    },
 };
 </script>
   
